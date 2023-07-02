@@ -5,12 +5,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+    {% extends "navigator.html" %}
+    {% block content %}
     <div class="container">
-        {% extends "navigator.html" %}
-        {% block content %}
         <div class="content">
             <h2>Visualisation App Home</h2>
             <p>This is a data analysis and visualisation application for National Greenhouse and Energy Register 2021-22.</p>
+            <p>Under the National Greenhouse and Energy Reporting Act 2007 (NGER Act), entities that are required to report their energy use and greenhouse gas emissions must report to the Australian Government. The Australian Government Clean Energy Regulator published these entities in the National Greenhouse and Energy Reporting Registrar https://www.cleanenergyregulator.gov.au/NGER/National greenhouse and energy reporting data/Extract-of-National-Greenhouse-and-Energy-Register-by-year/national-greenhouse-and-energyregister-2021-22 This application loads data and shows an analysis of the National Greenhouse and Energy Register for 2021-22 reporting year using the publicly available data.</p>
+
         </div>
         {% endblock %}
     </div>

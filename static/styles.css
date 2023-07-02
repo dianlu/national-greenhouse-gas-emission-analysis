@@ -41,6 +41,7 @@ body {
 .content {
     padding: 20px;
     margin-left: 25%;
+    margin-right: 5%;
 }
 
 .content h2 {
@@ -49,4 +50,5 @@ body {
 
 .content p {
     color: #555;
+    line-height: 1.85;
 }

@@ -103,3 +103,127 @@ def net_energy_pie_plot(data):
     fig = px.pie(data_pie_consumption, values='Net energy consumed (GJ)', names='Organisation name', title='Net Energy Consumption Portions')
     fig.update_layout(width=1200,height=1000)
     return fig
+
+def scopes_scatter(data):
+    ''' 
+    Scatter plot of scope 1 and scope 2 emissions.
+
+    Parameter:
+        data: Pandas dataframe, raw data
+    Return:
+        fig: Plotly figure
+    '''
+    fig =px.scatter(data, x="Total scope 1 emissions (t CO2-e)", y="Total scope 2 emissions (t CO2-e)")
+    fig.update_layout(
+    title_text="Relationship between scope 1 and scope 2 emissions",
+    xaxis=dict(
+        rangeslider=dict(
+            visible=True
+        ),
+    ))
+    fig.update_layout(width=1200,height=1000)
+    return fig
+
+def consumption_emission_scatter(data):
+    ''' 
+    Scatter plot of total emission and net energy consumption.
+
+    Parameter:
+        data: Pandas dataframe, raw data
+    Return:
+        fig: Plotly figure
+    '''
+    fig =px.scatter(data, x="total emission", y="Net energy consumed (GJ)")
+    fig.update_layout(
+    title_text="Relationship between total emission and net energy consumption",
+    xaxis=dict(
+        rangeslider=dict(
+            visible=True
+        ),
+    ))
+    fig.update_layout(width=1200,height=1000)
+    return fig
+
+def emission_heatmap(data):
+    ''' 
+    Heatmap plot of top 9 emissions.
+
+    Parameter:
+        data: Pandas dataframe, raw data
+    Return:
+        fig: Plotly figure
+    '''
+    sorted_data = data.sort_values('total emission', ascending=False)
+    top_9 = sorted_data.head(9)
+    value = np.reshape(top_9['total emission'].values, (3, 3))
+    reshaped_matrix = np.reshape(top_9['Organisation name'].values, (3, 3))
+    fig=px.imshow(value,color_continuous_scale=px.colors.sequential.Viridis,text_auto=True)
+    fig.update(data=[{'customdata': reshaped_matrix,
+        'hovertemplate': "%{customdata}<br>"}])
+    fig.update_layout(
+        title_text="Top 9 Total Emissions")
+    fig.update_layout(width=1200,height=1000)
+    return fig
+
+def consumption_heatmap(data):
+    ''' 
+    Heatmap plot of top 9 net energy consumptions.
+
+    Parameter:
+        data: Pandas dataframe, raw data
+    Return:
+        fig: Plotly figure
+    '''
+    sorted_data = data.sort_values('Net energy consumed (GJ)', ascending=False)
+    top_9 = sorted_data.head(9)
+    value = np.reshape(top_9['Net energy consumed (GJ)'].values, (3, 3))
+    reshaped_matrix = np.reshape(top_9['Organisation name'].values, (3, 3))
+    fig=px.imshow(value,color_continuous_scale=px.colors.sequential.Viridis,text_auto=True)
+    fig.update(data=[{'customdata': reshaped_matrix,
+        'hovertemplate': "%{customdata}<br>"}])
+    fig.update_layout(
+        title_text="Top 9 Energy Consumptions")
+    fig.update_layout(width=1200,height=1000)
+    return fig
+    
+def most_efficient(data):
+    ''' 
+    Heatmap plot of top 9 mist efficent organisations.
+
+    Parameter:
+        data: Pandas dataframe, raw data
+    Return:
+        fig: Plotly figure
+    '''
+    sorted_data = data.sort_values('share', ascending=True)
+    top_9 = sorted_data.head(9)
+    value = np.reshape(top_9['share'].values, (3, 3))
+    reshaped_matrix = np.reshape(top_9['Organisation name'].values, (3, 3))
+    fig=px.imshow(value,color_continuous_scale=px.colors.sequential.Viridis,text_auto=True)
+    fig.update(data=[{'customdata': reshaped_matrix,
+        'hovertemplate': "%{customdata}<br>"}])
+    fig.update_layout(
+        title_text="Top 9 Most Energy Efficient Organisations")
+    fig.update_layout(width=1200,height=1000)
+    return fig
+
+def least_efficient(data):
+    ''' 
+    Heatmap plot of top 9 least efficient organisations.
+
+    Parameter:
+        data: Pandas dataframe, raw data
+    Return:
+        fig: Plotly figure
+    '''
+    sorted_data = data.sort_values('share', ascending=False)
+    top_9 = sorted_data.head(9)
+    value = np.reshape(top_9['share'].values, (3, 3))
+    reshaped_matrix = np.reshape(top_9['Organisation name'].values, (3, 3))
+    fig=px.imshow(value,color_continuous_scale=px.colors.sequential.Viridis,text_auto=True)
+    fig.update(data=[{'customdata': reshaped_matrix,
+        'hovertemplate': "%{customdata}<br>"}])
+    fig.update_layout(
+        title_text="Top 9 Least Energy Efficient Organisations")
+    fig.update_layout(width=1200,height=1000)
+    return fig
