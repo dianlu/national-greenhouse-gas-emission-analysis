@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% extends "navigator.html" %}
+        {% block content %}
+        <div class="content">
+            <h2>Visualisation App Home</h2>
+            <p>This is a data analysis and visualisation application for National Greenhouse and Energy Register 2021-22.</p>
+        </div>
+        {% endblock %}
+    </div>
+</body>
+</html>

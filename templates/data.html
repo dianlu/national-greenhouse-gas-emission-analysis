@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Visualization</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    {% extends "navigator.html" %}
+    {% block content %}
+    <div class="container">
+        <div class="content">    
+            {{plt1|safe}}
+
+        </div>
+        <div class="content">    
+            {{plt2|safe}}
+        </div>   
+        <div class="content">    
+            {{plt3|safe}}
+        </div>   
+    </div>
+    {% endblock %}
+</body>
+</html>
