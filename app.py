@@ -62,9 +62,10 @@ def relationship():
     # Visualise data
     scopes=visual_plots.scopes_scatter(emission_data)
     consumption_emission_scatter=visual_plots.consumption_emission_scatter(emission_data)
+    share=visual_plots.share_scatter(emission_data)
     # Convert the figure to html and pass it to the template  
     return render_template('data.html', plt1=scopes.to_html(full_html=False),
-        plt2=consumption_emission_scatter.to_html(full_html=False))
+        plt2=consumption_emission_scatter.to_html(full_html=False),plt3=share.to_html(full_html=False))
 
 if __name__ == '__main__':
     app.run(debug=False)

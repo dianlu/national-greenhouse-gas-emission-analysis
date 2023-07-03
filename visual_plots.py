@@ -124,6 +124,26 @@ def scopes_scatter(data):
     fig.update_layout(width=1200,height=1000)
     return fig
 
+def share_scatter(data):
+    ''' 
+    Scatter plot of total emission and share (energy efficiency).
+
+    Parameter:
+        data: Pandas dataframe, raw data
+    Return:
+        fig: Plotly figure
+    '''
+    fig =px.scatter(data, x="share", y="total emission")
+    fig.update_layout(
+    title_text="Relationship between total emission and energy efficiency",
+    xaxis=dict(
+        rangeslider=dict(
+            visible=True
+        ),
+    ))
+    fig.update_layout(width=1200,height=1000)
+    return fig
+
 def consumption_emission_scatter(data):
     ''' 
     Scatter plot of total emission and net energy consumption.
