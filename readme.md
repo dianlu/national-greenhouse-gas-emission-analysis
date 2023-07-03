@@ -3,6 +3,12 @@
 This is a web application built with Python Flask that helps users understand National Greenhouse and Energy Reporting data better by visualisation. 
 
 Under the National Greenhouse and Energy Reporting Act 2007 (NGER Act), entities that are required to report their energy use and greenhouse gas emissions must report to the Australian Government. The Australian Government Clean Energy Regulator published these entities in the National Greenhouse and Energy Reporting Registrar https://www.cleanenergyregulator.gov.au/NGER/National greenhouse and energy reporting data/Extract-of-National-Greenhouse-and-Energy-Register-by-year/national-greenhouse-and-energyregister-2021-22 This application loads data and shows an analysis of the National Greenhouse and Energy Register for 2021-22 reporting year using the publicly available data.
+
+### Live demo
+
+This web application is deployed on a free account of pythonAnywhere, due to the limitation of this free account, the experience of running it might not be the smoothest, but it should gives you an idea of what the application looks like. The free account of pythonAnywhere also prohibits fetching data from another website, so I had made slight change to the deployed version if you use web inspection tool to see it, the fetching function is still implemented in the github version of code.
+
+Link to the live demo: [dianlu.pythonanywhere.com](http://dianlu.pythonanywhere.com)
 ### Sample pages
 ![Sample Image 1](images/sample1.jpg)
 
