@@ -25,10 +25,12 @@ def raw_data():
     emission_data=data_preprocess.fetch_and_process()
     # Visualise data
     raw_histogram_fig=visual_plots.raw_histogram(emission_data)
+    text1="Use the underneath slider to select range. One click on ledgend label to hide the attribute, and double click on legend label to only show one attribute in the plot. "
+    text_more=" Scroll down for more plots."
     raw_box=visual_plots.raw_box_plot(emission_data)
     # Convert the figure to html and pass it to the template  
-    return render_template('data.html', plt1=raw_histogram_fig.to_html(full_html=False),
-        plt2=raw_box.to_html(full_html=False))
+    return render_template('data.html', plt1=raw_histogram_fig.to_html(full_html=False),text1=text1+text_more,
+        plt2=raw_box.to_html(full_html=False), text2=text1)
 
 @app.route('/data')
 def data():
