@@ -68,8 +68,8 @@ def share_pie_plot(data):
     '''
     data_pie=data[['Organisation name','share']]
     data_pie.loc[data_pie['share'] < 0.3, 'Organisation name'] = 'Organisations < 30% emission rate'
-    fig = px.pie(data_pie, values='share', names='Organisation name', title='Least emission efficient organisation')
-    fig.update_layout(width=1200,height=900)
+    fig = px.pie(data_pie, values='share', names='Organisation name', title='Least Energy Efficient Organisations')
+    fig.update_layout(width=1200,height=950)
     return fig
 
 def total_emission_pie_plot(data):
@@ -85,7 +85,7 @@ def total_emission_pie_plot(data):
     data_pie_total=data[['Organisation name','total emission']]
     data_pie_total.loc[data_pie_total['total emission'] < 3000000, 'Organisation name'] = 'Organisations with emission < 3M'
     fig = px.pie(data_pie_total, values='total emission', names='Organisation name', title='Total Emission Portions')
-    fig.update_layout(width=1200,height=900)
+    fig.update_layout(width=1200,height=950)
     return fig
 
 def net_energy_pie_plot(data):
@@ -101,7 +101,7 @@ def net_energy_pie_plot(data):
     data_pie_consumption=data[['Organisation name','Net energy consumed (GJ)']]
     data_pie_consumption.loc[data_pie_consumption['Net energy consumed (GJ)'] < 30000000, 'Organisation name'] = 'Organisations with consumption < 30M'
     fig = px.pie(data_pie_consumption, values='Net energy consumed (GJ)', names='Organisation name', title='Net Energy Consumption Portions')
-    fig.update_layout(width=1200,height=900)
+    fig.update_layout(width=1200,height=950)
     return fig
 
 def scopes_scatter(data):
@@ -121,7 +121,7 @@ def scopes_scatter(data):
             visible=True
         ),
     ))
-    fig.update_layout(width=1200,height=900)
+    fig.update_layout(width=1200,height=950)
     return fig
 
 def share_scatter(data):
@@ -141,7 +141,7 @@ def share_scatter(data):
             visible=True
         ),
     ))
-    fig.update_layout(width=1200,height=900)
+    fig.update_layout(width=1200,height=950)
     return fig
 
 def consumption_emission_scatter(data):
@@ -161,7 +161,7 @@ def consumption_emission_scatter(data):
             visible=True
         ),
     ))
-    fig.update_layout(width=1200,height=900)
+    fig.update_layout(width=1200,height=950)
     return fig
 
 def emission_heatmap(data):
@@ -182,7 +182,7 @@ def emission_heatmap(data):
         'hovertemplate': "%{customdata}<br>"}])
     fig.update_layout(
         title_text="Top 9 Total Emissions")
-    fig.update_layout(width=1200,height=900)
+    fig.update_layout(width=1200,height=950)
     return fig
 
 def consumption_heatmap(data):
@@ -203,7 +203,7 @@ def consumption_heatmap(data):
         'hovertemplate': "%{customdata}<br>"}])
     fig.update_layout(
         title_text="Top 9 Energy Consumptions")
-    fig.update_layout(width=1200,height=900)
+    fig.update_layout(width=1200,height=950)
     return fig
     
 def most_efficient(data):
@@ -224,7 +224,7 @@ def most_efficient(data):
         'hovertemplate': "%{customdata}<br>"}])
     fig.update_layout(
         title_text="Top 9 Most Energy Efficient Organisations")
-    fig.update_layout(width=1200,height=900)
+    fig.update_layout(width=1200,height=950)
     return fig
 
 def least_efficient(data):
@@ -245,5 +245,5 @@ def least_efficient(data):
         'hovertemplate': "%{customdata}<br>"}])
     fig.update_layout(
         title_text="Top 9 Least Energy Efficient Organisations")
-    fig.update_layout(width=1200,height=900)
+    fig.update_layout(width=1200,height=950)
     return fig
