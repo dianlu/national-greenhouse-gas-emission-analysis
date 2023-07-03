@@ -3,6 +3,10 @@
 This is a web application built with Python Flask that helps users understand National Greenhouse and Energy Reporting data better by visualisation. 
 
 Under the National Greenhouse and Energy Reporting Act 2007 (NGER Act), entities that are required to report their energy use and greenhouse gas emissions must report to the Australian Government. The Australian Government Clean Energy Regulator published these entities in the National Greenhouse and Energy Reporting Registrar https://www.cleanenergyregulator.gov.au/NGER/National greenhouse and energy reporting data/Extract-of-National-Greenhouse-and-Energy-Register-by-year/national-greenhouse-and-energyregister-2021-22 This application loads data and shows an analysis of the National Greenhouse and Energy Register for 2021-22 reporting year using the publicly available data.
+### Sample pages
+![Sample Image 1](images/sample 1.jpg)
+![Sample Image 2](images/sample 2.jpg)
+
 
 ## Requirements
 
