@@ -11,16 +11,16 @@ app = Flask(__name__)
 
 # Configuration options
 app.config['STATIC_URL_TIMESTAMP'] = True
-app.config['DEBUG'] = False
-app.debug = False
 
 
 @app.route('/')
 def index():
+    '''Home page'''
     return render_template('home.html')
 
 @app.route('/raw_data')
 def raw_data():
+    '''Raw Data Explore'''
     # Get data
     emission_data=data_preprocess.fetch_and_process()
     # Visualise data
@@ -34,6 +34,7 @@ def raw_data():
 
 @app.route('/data')
 def data():
+    '''Emission Analysis'''
     # Get data
     emission_data=data_preprocess.fetch_and_process()
     # Visualise data
@@ -46,6 +47,7 @@ def data():
 
 @app.route('/heatmap')
 def heatmap():
+    '''Operational Analysis'''
     # Get data
     emission_data=data_preprocess.fetch_and_process()
     # Visualise data
@@ -59,6 +61,7 @@ def heatmap():
 
 @app.route('/relationship')
 def relationship():
+    '''Relationship Analysis'''
     # Get data
     emission_data=data_preprocess.fetch_and_process()
     # Visualise data
