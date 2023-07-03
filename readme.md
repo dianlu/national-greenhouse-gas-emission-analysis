@@ -23,7 +23,7 @@ Under the National Greenhouse and Energy Reporting Act 2007 (NGER Act), entities
    
    `pip install -r requirements.txt `
 
-## Usage
+## Running the App
 
 1. Navigate to the project directory
 
